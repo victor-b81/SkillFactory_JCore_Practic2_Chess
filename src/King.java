@@ -19,7 +19,7 @@ public class King extends ChessPiece{
         //проверка, если начальная клетка непуста и это король
         if (chessBoard.board[line][column] !=null && chessBoard.board[line][column].equals(this)) {
             // проверка, хода в рамках шахматного поля 8 х 8 checkBorder(),
-            if (checkBorder(toLine, toColumn)) {
+            if (checkBorder(line, column, toLine, toColumn)) {
                 // начальные координаты неравны конечным
                 if (line == toLine && column == toColumn) return false;
                 // ход на одну клетку
@@ -34,7 +34,7 @@ public class King extends ChessPiece{
     }
 
     public boolean isUnderAttack(ChessBoard chessBoard, int toLine, int toColumn){
-        if (checkBorder(toLine, toColumn)){
+        if (checkBorder(0, 0, toLine, toColumn)){
             for (int i = 0; i < 7; i++){
                 for (int j = 0; j < 7; j++){
                     if (chessBoard.board[i][j] !=null) {

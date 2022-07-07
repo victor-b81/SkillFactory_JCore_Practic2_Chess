@@ -15,7 +15,7 @@ public class Rook extends ChessPiece{
         if (chessBoard.board[line][column] !=null && chessBoard.board[line][column].equals(this)) {
             // проверка, хода в рамках шахматного поля 8 х 8 checkBorder(),
             // и конечные координаты не равны начальным координатам
-            if (checkBorder(toLine, toColumn)){
+            if (checkBorder(line, column, toLine, toColumn)){
                 // проверка если конечная клетка пуста либо там фигура другого цвета
                 if (chessBoard.board[toLine][toColumn] == null || !chessBoard.board[toLine][toColumn].getColor().equals(this.color)) {
                     // проверка если ходит по вертикали, нет ли фигур "по дороге"

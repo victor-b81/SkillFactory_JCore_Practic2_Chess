@@ -16,7 +16,7 @@ public class Bishop extends ChessPiece{
             // проверка, хода в рамках шахматного поля 8 х 8 checkBorder(),
             // и конечные координаты не равны начальным координатам
             // и ход выполнен по диагонали
-            if (checkBorder(toLine, toColumn) && checkDiagonalAndMove(line, column, toLine, toColumn)){
+            if (checkBorder(line, column, toLine, toColumn) && checkDiagonalAndMove(line, column, toLine, toColumn)){
                 // проверка если конечная клетка пуста либо там фигура другого цвета
                 if (chessBoard.board[toLine][toColumn] == null || !chessBoard.board[toLine][toColumn].color.equals(this.color)) {
                     // если слон ходит вправо вверх

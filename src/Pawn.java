@@ -15,7 +15,7 @@ public class Pawn extends ChessPiece {
         //проверка, если начальная клетка непуста и это пешка
         if (chessBoard.board[line][column] != null && chessBoard.board[line][column].equals(this)) {
             // проверка, хода в рамках шахматного поля 8 х 8, и конечные координаты не равны начальным координотам
-            if (checkBorder(toLine, toColumn)) {
+            if (checkBorder(line, column, toLine, toColumn)) {
                 if (column == toColumn) {
                     //проверка если первый ход то можно ходить на две клетки и только вперед
                     //Проверка если белые

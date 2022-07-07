@@ -15,7 +15,7 @@ public class Horse extends ChessPiece{
         //проверка, если начальная клетка непуста и это конь
         if (chessBoard.board[line][column] !=null && chessBoard.board[line][column].equals(this)) {
             // проверка, хода в рамках шахматного поля 8 х 8, и конечные координаты не равны начальным координатам
-            if (checkBorder(toLine, toColumn) && line != toLine && column != toColumn) {
+            if (checkBorder(line, column, toLine, toColumn) && line != toLine && column != toColumn) {
                 // проверка если конечная клетка пуста либо там фигура другого цвета
                 if (chessBoard.board[toLine][toColumn] == null || !chessBoard.board[toLine][toColumn].color.equals(this.color)) {
                     //создаем матрицу возможных ходов для коня
